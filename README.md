@@ -1,5 +1,20 @@
 # Stock Price API
 
+## Prerequisites
+
+This project uses the Alpha Vantage API to fetch stock prices. To run the project, you will need a free API key.
+
+1. Visit the [Alpha Vantage API Key Request](https://www.alphavantage.co/support/#api-key) page.
+2. Fill out the form to claim your free API key.
+3. Once you have the key, set it as an environment variable in your project. You can do this by copying the `.env.example` file to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+4. Open the `.env` file and replace the demo key with your actual API key:
+   ```env
+   ALPHAVANTAGE_API_KEY=your_actual_api_key_here
+   ```
+
 ## How to run the project
 
 This project uses `uv` as the package manager and runner, and supports Docker for containerized deployment. 
@@ -16,8 +31,7 @@ This will build the application and start it on `http://127.0.0.1`
 
 1. Ensure `uv` is installed on your system.
 2. Run `uv sync` to install dependencies
-3. Create the .env file from the .env.example file
-4. Start the FastAPI development server:
+3. Start the FastAPI development server:
 
 ```bash
 uv run fastapi dev api/main.py
