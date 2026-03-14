@@ -1,0 +1,12 @@
+name : stock-price-api
+
+services:
+  api:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - ALPHAVANTAGE_API_KEY=${ALPHAVANTAGE_API_KEY:-demo}
+      - DB_FILE=${DB_FILE:-./data/db.sqlite}
+    volumes:
+      - ./data:/app/data
